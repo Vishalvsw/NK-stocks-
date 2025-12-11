@@ -16,7 +16,7 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Get in Touch</h1>
-            <p className="text-gray-600 max-w-2xl mx-auto">Have questions about our courses or need career guidance? Fill out the form below or reach us directly.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">Have questions about our services or need career guidance? Fill out the form below or reach us directly.</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -39,7 +39,7 @@ const Contact = () => {
                      <div className="bg-white/10 p-3 rounded-lg"><Mail className="h-6 w-6 text-secondary" /></div>
                      <div>
                        <p className="text-slate-400 text-sm mb-1">Email</p>
-                       <p className="font-semibold">support@finstocksolutions.com</p>
+                       <p className="font-semibold">support@nkstocksolutions.com</p>
                        <p className="text-sm text-slate-500 mt-1">Online support 24/7</p>
                      </div>
                    </div>
@@ -84,13 +84,14 @@ const Contact = () => {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Interested Course</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Service Interest</label>
                     <select className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-secondary/50 outline-none transition-all bg-white">
-                      <option>Select a course</option>
-                      <option>Technical Analysis</option>
-                      <option>Options Trading</option>
-                      <option>Fundamental Analysis</option>
-                      <option>Other</option>
+                      <option>Select a service</option>
+                      <option>Equity Services</option>
+                      <option>Derivative Services</option>
+                      <option>Index Options</option>
+                      <option>MCX / Commodities</option>
+                      <option>Stock Market Courses</option>
                     </select>
                   </div>
                   <div>

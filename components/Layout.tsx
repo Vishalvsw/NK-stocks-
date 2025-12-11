@@ -16,12 +16,13 @@ const Navbar = () => {
             <div className="bg-secondary p-2 rounded-lg">
               <TrendingUp className="h-6 w-6 text-white" />
             </div>
-            <span className="text-2xl font-bold text-slate-800">Finstock<span className="text-secondary">Solutions</span></span>
+            <span className="text-2xl font-bold text-slate-800">NK Stock<span className="text-secondary"> Solutions</span></span>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             <Link to="/" className={isActive('/')}>Home</Link>
+            <Link to="/services" className={isActive('/services')}>Services</Link>
             <Link to="/courses" className={isActive('/courses')}>Courses</Link>
             <Link to="/blog" className={isActive('/blog')}>Blog</Link>
             <Link to="/contact" className={isActive('/contact')}>Contact</Link>
@@ -48,6 +49,7 @@ const Navbar = () => {
         <div className="md:hidden bg-white border-t">
           <div className="px-4 pt-2 pb-4 space-y-2">
             <Link to="/" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link to="/services" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>Services</Link>
             <Link to="/courses" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>Courses</Link>
             <Link to="/blog" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>Blog</Link>
             <Link to="/contact" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>Contact</Link>
@@ -69,7 +71,7 @@ const Footer = () => {
                <div className="bg-secondary p-2 rounded-lg">
                 <TrendingUp className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold">FinstockSolutions</span>
+              <span className="text-xl font-bold">NK Stock Solutions</span>
             </div>
             <p className="text-slate-400 mb-4">
               Empowering individuals with financial literacy and expert stock market training.
@@ -86,6 +88,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 border-b border-slate-700 pb-2 inline-block">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="text-slate-400 hover:text-secondary">Home</Link></li>
+              <li><Link to="/services" className="text-slate-400 hover:text-secondary">Our Services</Link></li>
               <li><Link to="/courses" className="text-slate-400 hover:text-secondary">All Courses</Link></li>
               <li><Link to="/blog" className="text-slate-400 hover:text-secondary">Market News</Link></li>
               <li><Link to="/contact" className="text-slate-400 hover:text-secondary">Contact Us</Link></li>
@@ -115,13 +118,13 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-secondary" />
-                <span className="text-slate-400">info@finstocksolutions.com</span>
+                <span className="text-slate-400">info@nkstocksolutions.com</span>
               </li>
             </ul>
           </div>
         </div>
         <div className="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} FinstockSolutions. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} NK Stock Solutions. All rights reserved.</p>
         </div>
       </div>
     </footer>

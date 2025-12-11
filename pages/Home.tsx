@@ -17,7 +17,7 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Master the Stock Market with <span className="text-secondary">Confidence</span>
+              Master the Stock Market with <span className="text-secondary">NK Stock Solutions</span>
             </h1>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl">
               Learn practical strategies, technical analysis, and risk management from expert traders. Start your journey to financial freedom today.
@@ -26,8 +26,8 @@ const Home = () => {
               <Link to="/courses" className="bg-secondary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition-colors text-center">
                 Explore Courses
               </Link>
-              <Link to="/contact" className="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/20 transition-colors text-center">
-                Talk to an Expert
+              <Link to="/services" className="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/20 transition-colors text-center">
+                View Services
               </Link>
             </div>
           </div>
@@ -58,8 +58,8 @@ const Home = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-secondary font-bold tracking-wider uppercase">Why Finstock</span>
-            <h2 className="text-3xl font-bold text-slate-900 mt-2">Why Choose Our Platform?</h2>
+            <span className="text-secondary font-bold tracking-wider uppercase">Why Us</span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-2">Why Choose NK Stock Solutions?</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
