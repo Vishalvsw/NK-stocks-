@@ -37,3 +37,29 @@ export enum PaymentMethod {
   CARD = 'CARD',
   NETBANKING = 'NETBANKING'
 }
+
+export type LeadStatus = 'New' | 'Follow Up' | 'Interested' | 'Closed Won' | 'Closed Lost' | 'Free Trial' | 'Others';
+
+export interface Lead {
+  id: string;
+  owner: string;
+  name: string;
+  phone: string;
+  email: string;
+  status: LeadStatus;
+  source: string;
+  state: string;
+  date: string;
+  interestedIn?: string;
+  followUpDate?: string;
+}
+
+export interface Sale {
+  id: string;
+  leadId: string;
+  customerName: string;
+  courseTitle: string;
+  amount: number;
+  date: string; // Format: YYYY-MM-DD
+  paymentMethod: string;
+}

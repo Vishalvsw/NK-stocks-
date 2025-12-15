@@ -71,7 +71,7 @@ const Services = () => {
     }
   ];
 
-  const ServiceCard = ({ title, description, icon: Icon }: { title: string, description: string, icon: any }) => (
+  const ServiceCard: React.FC<{ title: string, description: string, icon: any }> = ({ title, description, icon: Icon }) => (
     <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-secondary/30 group h-full flex flex-col">
       <div className="mb-4 bg-gray-50 w-12 h-12 rounded-lg flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
         <Icon className="h-6 w-6" />

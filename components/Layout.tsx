@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, TrendingUp, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, MessageCircle } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, TrendingUp, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, MessageCircle, LogOut, User } from 'lucide-react';
+import { useApp } from '../context/AppContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { user, logout } = useApp();
+  const navigate = useNavigate();
 
   const isActive = (path: string) => location.pathname === path ? 'text-secondary font-bold' : 'text-gray-600 hover:text-secondary';
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+    setIsOpen(false);
+  };
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -20,19 +29,34 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             <Link to="/" className={isActive('/')}>Home</Link>
             <Link to="/services" className={isActive('/services')}>Services</Link>
             <Link to="/courses" className={isActive('/courses')}>Courses</Link>
             <Link to="/blog" className={isActive('/blog')}>Blog</Link>
             <Link to="/contact" className={isActive('/contact')}>Contact</Link>
-            <Link to="/admin" className={isActive('/admin')}>Admin</Link>
+            
+            {user ? (
+               <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-200">
+                  <span className="text-sm font-semibold text-slate-700 flex items-center">
+                    <User className="h-4 w-4 mr-1" /> {user.name}
+                  </span>
+                  <Link to="/admin" className="text-secondary font-semibold hover:text-green-700">Dashboard</Link>
+                  <button onClick={handleLogout} className="text-gray-500 hover:text-red-500" title="Logout">
+                    <LogOut className="h-5 w-5" />
+                  </button>
+               </div>
+            ) : (
+               <Link to="/login" className={isActive('/login')}>Login</Link>
+            )}
           </div>
 
           <div className="hidden md:flex">
-             <Link to="/contact" className="bg-primary text-white px-6 py-2 rounded-full hover:bg-slate-800 transition-colors">
-               Get Started
-             </Link>
+             {!user && (
+                <Link to="/contact" className="ml-4 bg-primary text-white px-6 py-2 rounded-full hover:bg-slate-800 transition-colors">
+                  Get Started
+                </Link>
+             )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -53,7 +77,14 @@ const Navbar = () => {
             <Link to="/courses" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>Courses</Link>
             <Link to="/blog" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>Blog</Link>
             <Link to="/contact" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>Contact</Link>
-            <Link to="/admin" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>Admin Panel</Link>
+            {user ? (
+              <>
+                <Link to="/admin" className="block py-2 font-bold text-secondary" onClick={() => setIsOpen(false)}>Dashboard ({user.username})</Link>
+                <button onClick={handleLogout} className="block w-full text-left py-2 text-red-500">Logout</button>
+              </>
+            ) : (
+                <Link to="/login" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>Login</Link>
+            )}
           </div>
         </div>
       )}
@@ -145,7 +176,7 @@ const WhatsAppButton = () => {
   );
 };
 
-export const Layout = ({ children }: { children: React.ReactNode }) => {
+export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />

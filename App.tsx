@@ -7,6 +7,8 @@ import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 import Services from './pages/Services';
+import Login from './pages/Login';
+import { ProtectedRoute } from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -18,7 +20,14 @@ function App() {
         <Route path="/courses/:id" element={<CourseDetails />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/login" element={<Login />} />
+        
+        {/* Protected Admin Route */}
+        <Route path="/admin" element={
+          <ProtectedRoute>
+            <Admin />
+          </ProtectedRoute>
+        } />
       </Routes>
     </Router>
   );
