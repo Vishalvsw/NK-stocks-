@@ -19,8 +19,8 @@ const Courses = () => {
 
   return (
     <Layout>
-      <div className="bg-slate-50 py-12">
-        <div className="container mx-auto px-4">
+      <div className="bg-slate-50 py-12 min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-slate-900 mb-8 text-center">Explore Our Courses</h1>
 
           {/* Search & Filter */}

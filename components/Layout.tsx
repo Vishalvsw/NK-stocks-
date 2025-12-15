@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-2">
             <div className="bg-secondary p-2 rounded-lg">
@@ -70,7 +70,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="md:hidden bg-white border-t absolute w-full left-0 top-20 shadow-lg">
           <div className="px-4 pt-2 pb-4 space-y-2">
             <Link to="/" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>Home</Link>
             <Link to="/services" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>Services</Link>
@@ -95,7 +95,7 @@ const Navbar = () => {
 const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white pt-16 pb-8">
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 
-export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+export const ProtectedRoute = ({ children }: PropsWithChildren) => {
   const { user } = useApp();
   
   if (!user) {

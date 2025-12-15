@@ -12,18 +12,18 @@ const Home = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white py-24 overflow-hidden">
+      <section className="relative bg-slate-900 text-white py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1611974765270-ca12586343bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Master the Stock Market with <span className="text-secondary">NK Stock Solutions</span>
             </h1>
-            <p className="text-xl text-slate-300 mb-8 max-w-2xl">
+            <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl">
               Learn practical strategies, technical analysis, and risk management from expert traders. Start your journey to financial freedom today.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link to="/courses" className="bg-secondary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition-colors text-center">
+              <Link to="/courses" className="bg-secondary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition-colors text-center shadow-lg shadow-green-500/20">
                 Explore Courses
               </Link>
               <Link to="/services" className="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/20 transition-colors text-center">
@@ -35,28 +35,30 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-10 bg-white shadow-lg -mt-10 relative z-20 container mx-auto rounded-xl px-4 grid grid-cols-2 md:grid-cols-4 gap-8 border border-gray-100">
-        <div className="text-center">
-          <div className="text-3xl font-bold text-slate-900">10k+</div>
-          <div className="text-gray-500 text-sm">Students Trained</div>
-        </div>
-        <div className="text-center">
-          <div className="text-3xl font-bold text-slate-900">50+</div>
-          <div className="text-gray-500 text-sm">Expert Courses</div>
-        </div>
-        <div className="text-center">
-          <div className="text-3xl font-bold text-slate-900">4.8/5</div>
-          <div className="text-gray-500 text-sm">Average Rating</div>
-        </div>
-        <div className="text-center">
-          <div className="text-3xl font-bold text-slate-900">24/7</div>
-          <div className="text-gray-500 text-sm">Support</div>
-        </div>
-      </section>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-10">
+        <section className="bg-white shadow-xl rounded-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8 border border-gray-100">
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-slate-900">10k+</div>
+            <div className="text-gray-500 text-sm mt-1">Students Trained</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-slate-900">50+</div>
+            <div className="text-gray-500 text-sm mt-1">Expert Courses</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-slate-900">4.8/5</div>
+            <div className="text-gray-500 text-sm mt-1">Average Rating</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-slate-900">24/7</div>
+            <div className="text-gray-500 text-sm mt-1">Support</div>
+          </div>
+        </section>
+      </div>
 
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-secondary font-bold tracking-wider uppercase">Why Us</span>
             <h2 className="text-3xl font-bold text-slate-900 mt-2">Why Choose NK Stock Solutions?</h2>
@@ -68,21 +70,21 @@ const Home = () => {
                 <MonitorPlay className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-3">Live Market Training</h3>
-              <p className="text-gray-600">Don't just learn theory. Watch our mentors trade live in the market and learn practical execution.</p>
+              <p className="text-gray-600 leading-relaxed">Don't just learn theory. Watch our mentors trade live in the market and learn practical execution.</p>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                <div className="w-14 h-14 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-6">
                 <ShieldCheck className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-3">Verified Curriculum</h3>
-              <p className="text-gray-600">Our courses are designed by NISM certified professionals with years of experience.</p>
+              <p className="text-gray-600 leading-relaxed">Our courses are designed by NISM certified professionals with years of experience.</p>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                <div className="w-14 h-14 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-6">
                 <Award className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-3">Certification</h3>
-              <p className="text-gray-600">Get industry-recognized certificates upon completion to boost your resume and career.</p>
+              <p className="text-gray-600 leading-relaxed">Get industry-recognized certificates upon completion to boost your resume and career.</p>
             </div>
           </div>
         </div>
@@ -90,7 +92,7 @@ const Home = () => {
 
       {/* Top Courses */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-12">
             <div>
               <span className="text-secondary font-bold tracking-wider uppercase">Start Learning</span>
@@ -117,7 +119,7 @@ const Home = () => {
 
       {/* Testimonials */}
       <section className="py-20 bg-slate-900 text-white">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mt-2">What Our Students Say</h2>
           </div>
@@ -161,10 +163,10 @@ const Home = () => {
 
       {/* CTA */}
       <section className="py-24 bg-gradient-to-r from-secondary to-green-500 text-white text-center">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Trading Journey?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">Join 10,000+ students and start learning the skills that matter.</p>
-          <Link to="/courses" className="bg-white text-green-600 px-10 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-all">
+          <Link to="/courses" className="bg-white text-green-600 px-10 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-all inline-block">
             Browse All Courses
           </Link>
         </div>

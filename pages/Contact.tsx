@@ -12,8 +12,8 @@ const Contact = () => {
 
   return (
     <Layout>
-      <div className="bg-slate-50 py-16">
-        <div className="container mx-auto px-4">
+      <div className="bg-slate-50 py-16 min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Get in Touch</h1>
             <p className="text-gray-600 max-w-2xl mx-auto">Have questions about our services or need career guidance? Fill out the form below or reach us directly.</p>

@@ -16,7 +16,7 @@ const CourseDetails = () => {
   if (!course) {
     return (
       <Layout>
-        <div className="container mx-auto px-4 py-20 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <h2 className="text-2xl font-bold">Course not found</h2>
           <button onClick={() => navigate('/courses')} className="mt-4 text-secondary hover:underline">Back to courses</button>
         </div>
@@ -41,7 +41,7 @@ const CourseDetails = () => {
       <div className="bg-slate-50 min-h-screen pb-20">
         {/* Header */}
         <div className="bg-slate-900 text-white py-12 md:py-20">
-          <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="max-w-4xl">
                <span className="bg-secondary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-4 inline-block">{course.category}</span>
                <h1 className="text-3xl md:text-5xl font-bold mb-4">{course.title}</h1>
@@ -56,10 +56,10 @@ const CourseDetails = () => {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 -mt-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Content */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-8 order-2 lg:order-1">
               {/* Features */}
               <div className="bg-white rounded-xl shadow-sm p-8">
                 <h2 className="text-2xl font-bold mb-6 text-slate-900">What you'll learn</h2>
@@ -111,8 +111,8 @@ const CourseDetails = () => {
               </div>
             </div>
 
-            {/* Sidebar Pricing */}
-            <div className="lg:col-span-1">
+            {/* Sidebar Pricing - Appears first on mobile */}
+            <div className="lg:col-span-1 order-1 lg:order-2">
               <div className="bg-white rounded-xl shadow-lg p-6 sticky top-24 border border-gray-100">
                 <div className="mb-6">
                   <span className="text-gray-500 text-sm line-through block">₹{course.originalPrice}</span>

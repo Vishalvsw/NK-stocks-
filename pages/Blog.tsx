@@ -32,8 +32,8 @@ const Blog = () => {
 
   return (
     <Layout>
-      <div className="bg-slate-50 py-12">
-        <div className="container mx-auto px-4">
+      <div className="bg-slate-50 py-12 min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center mb-12">
              <div className="mb-6 md:mb-0">
                <h1 className="text-3xl font-bold text-slate-900 mb-2">Market Insights</h1>
