@@ -1,7 +1,37 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, TrendingUp, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, MessageCircle, LogOut, User } from 'lucide-react';
+import { Menu, X, TrendingUp, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, MessageCircle, LogOut, User, AlertTriangle } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+
+const TopMarquee = () => {
+  return (
+    <div className="bg-slate-900 text-white py-2 overflow-hidden whitespace-nowrap border-b border-slate-700">
+      <div className="inline-block animate-marquee hover:pause-marquee">
+        <span className="mx-4 text-xs font-medium uppercase tracking-widest flex items-center">
+          <AlertTriangle className="h-3 w-3 mr-2 text-yellow-500" />
+          Disclaimer: We are not SEBI registered. All courses and services are for educational purposes only. Trading involves significant risk.
+          <AlertTriangle className="h-3 w-3 ml-8 mr-2 text-yellow-500" />
+          Disclaimer: We are not SEBI registered. All courses and services are for educational purposes only. Trading involves significant risk.
+          <AlertTriangle className="h-3 w-3 ml-8 mr-2 text-yellow-500" />
+          Disclaimer: We are not SEBI registered. All courses and services are for educational purposes only. Trading involves significant risk.
+        </span>
+      </div>
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-33.33%); }
+        }
+        .animate-marquee {
+          display: inline-block;
+          animation: marquee 30s linear infinite;
+        }
+        .hover\:pause-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+    </div>
+  );
+};
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -107,6 +137,7 @@ const Footer = () => {
             <p className="text-slate-400 mb-4">
               Empowering individuals with financial literacy and expert stock market training.
             </p>
+            <p className="text-slate-500 text-xs italic mb-4">We are not SEBI registered.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-slate-400 hover:text-white"><Facebook className="h-5 w-5" /></a>
               <a href="#" className="text-slate-400 hover:text-white"><Twitter className="h-5 w-5" /></a>
@@ -156,6 +187,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
           <p>&copy; {new Date().getFullYear()} NK Stock Solutions. All rights reserved.</p>
+          <p className="mt-2 text-[10px] uppercase tracking-widest text-slate-600">Educational Portal - Not a SEBI Registered Entity</p>
         </div>
       </div>
     </footer>
@@ -179,6 +211,7 @@ const WhatsAppButton = () => {
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen">
+      <TopMarquee />
       <Navbar />
       <main className="flex-grow">{children}</main>
       <WhatsAppButton />
