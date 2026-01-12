@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { CourseCard } from '../components/CourseCard';
 import { useApp } from '../context/AppContext';
-import { ArrowRight, ShieldCheck, Award, TrendingUp, MonitorPlay } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Award, TrendingUp, MonitorPlay, AlertCircle } from 'lucide-react';
 
 const Home = () => {
   const { courses } = useApp();
@@ -33,6 +33,30 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Sub-Hero Disclaimer Marquee */}
+      <div className="bg-red-50 border-y border-red-100 py-3 overflow-hidden whitespace-nowrap">
+        <div className="inline-block animate-marquee-fast">
+          <span className="mx-8 text-red-600 text-sm font-bold flex items-center">
+            <AlertCircle className="h-4 w-4 mr-2" />
+            WE ARE NOT SEBI REGISTERED. ALL CONTENT IS FOR EDUCATIONAL PURPOSES ONLY. CONSULT YOUR FINANCIAL ADVISOR BEFORE INVESTING.
+            <AlertCircle className="h-4 w-4 ml-16 mr-2" />
+            WE ARE NOT SEBI REGISTERED. ALL CONTENT IS FOR EDUCATIONAL PURPOSES ONLY. CONSULT YOUR FINANCIAL ADVISOR BEFORE INVESTING.
+            <AlertCircle className="h-4 w-4 ml-16 mr-2" />
+            WE ARE NOT SEBI REGISTERED. ALL CONTENT IS FOR EDUCATIONAL PURPOSES ONLY. CONSULT YOUR FINANCIAL ADVISOR BEFORE INVESTING.
+          </span>
+        </div>
+        <style>{`
+          @keyframes marquee-fast {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-33.33%); }
+          }
+          .animate-marquee-fast {
+            display: inline-block;
+            animation: marquee-fast 20s linear infinite;
+          }
+        `}</style>
+      </div>
 
       {/* Stats Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-10">
@@ -77,14 +101,14 @@ const Home = () => {
                 <ShieldCheck className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-3">Verified Curriculum</h3>
-              <p className="text-gray-600 leading-relaxed">Our courses are designed by NISM certified professionals with years of experience.</p>
+              <p className="text-gray-600 leading-relaxed">Our courses are designed by industry professionals with years of trading experience.</p>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                <div className="w-14 h-14 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-6">
                 <Award className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-3">Certification</h3>
-              <p className="text-gray-600 leading-relaxed">Get industry-recognized certificates upon completion to boost your resume and career.</p>
+              <p className="text-gray-600 leading-relaxed">Get a certificate upon completion to boost your confidence and demonstrate your learning.</p>
             </div>
           </div>
         </div>
@@ -166,6 +190,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Trading Journey?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">Join 10,000+ students and start learning the skills that matter.</p>
+          <p className="text-xs mb-4 text-slate-100 uppercase tracking-widest font-bold">WE ARE NOT SEBI REGISTERED</p>
           <Link to="/courses" className="bg-white text-green-600 px-10 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-all inline-block">
             Browse All Courses
           </Link>
