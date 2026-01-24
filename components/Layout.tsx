@@ -16,19 +16,22 @@ const Navbar = ({ offset = 0 }: { offset?: number }) => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  // We set the top based on the height of the marquee to ensure it stays "above the header"
   return (
     <nav 
       style={{ top: `${offset}px` }}
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200 py-3 shadow-sm' : 'bg-transparent py-5'}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-primary/95 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl' 
+          : 'bg-primary/80 backdrop-blur-md border-b border-white/5 py-5'
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3">
-            <div className="bg-primary p-2.5 rounded-xl shadow-lg border border-white/10">
+            <div className="bg-white/10 p-2.5 rounded-xl shadow-lg border border-white/10 backdrop-blur-sm">
               <TrendingUp className="h-6 w-6 text-secondary" />
             </div>
-            <span className={`text-2xl font-black tracking-tighter ${scrolled || location.pathname !== '/' ? 'text-primary' : 'text-white'}`}>
+            <span className="text-2xl font-black tracking-tighter text-white">
               NKSTOCK<span className="text-secondary">.</span>
             </span>
           </Link>
@@ -47,20 +50,20 @@ const Navbar = ({ offset = 0 }: { offset?: number }) => {
                 className={`text-sm font-bold uppercase tracking-widest transition-colors ${
                   isActive(link.path) 
                     ? 'text-secondary' 
-                    : scrolled || location.pathname !== '/' ? 'text-slate-600 hover:text-primary' : 'text-slate-300 hover:text-white'
+                    : 'text-slate-300 hover:text-white'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
             
-            <Link to="/courses" className="bg-secondary text-primary px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-white transition-all shadow-lg shadow-secondary/20">
+            <Link to="/courses" className="bg-secondary text-primary px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-white hover:scale-105 transition-all shadow-lg shadow-secondary/20">
               Enroll Now
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className={`md:hidden p-2 rounded-xl ${scrolled || location.pathname !== '/' ? 'text-primary' : 'text-white'}`}>
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded-xl text-white hover:bg-white/10 transition-colors">
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -68,8 +71,8 @@ const Navbar = ({ offset = 0 }: { offset?: number }) => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-slate-100 shadow-2xl animate-fade-in fixed inset-0 top-[72px] z-50">
-          <div className="p-8 space-y-8">
+        <div className="md:hidden bg-primary border-t border-white/10 shadow-2xl animate-fade-in fixed inset-0 z-50" style={{ top: `${offset + (scrolled ? 64 : 88)}px` }}>
+          <div className="p-8 space-y-8 h-full flex flex-col justify-center items-center text-center">
             {[
               { label: 'Home', path: '/' },
               { label: 'Services', path: '/services' },
@@ -79,12 +82,21 @@ const Navbar = ({ offset = 0 }: { offset?: number }) => {
                <Link 
                 key={link.path}
                 to={link.path} 
-                className="block text-4xl font-black text-primary capitalize hover:text-secondary transition-colors" 
+                className={`block text-4xl font-black capitalize transition-colors ${
+                  isActive(link.path) ? 'text-secondary' : 'text-white hover:text-secondary'
+                }`} 
                 onClick={() => setIsOpen(false)}
                >
                 {link.label}
                </Link>
             ))}
+            <Link 
+              to="/courses" 
+              onClick={() => setIsOpen(false)}
+              className="mt-8 bg-secondary text-primary px-12 py-5 rounded-2xl text-xl font-black uppercase tracking-widest shadow-2xl"
+            >
+              Enroll Now
+            </Link>
           </div>
         </div>
       )}
