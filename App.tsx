@@ -1,14 +1,10 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Contact from './pages/Contact';
+import Services from './pages/Services';
 import Courses from './pages/Courses';
 import CourseDetails from './pages/CourseDetails';
-import Blog from './pages/Blog';
-import Contact from './pages/Contact';
-import Admin from './pages/Admin';
-import Services from './pages/Services';
-import Login from './pages/Login';
-import { ProtectedRoute } from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -18,16 +14,9 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:id" element={<CourseDetails />} />
-        <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
         
-        {/* Protected Admin Route */}
-        <Route path="/admin" element={
-          <ProtectedRoute>
-            <Admin />
-          </ProtectedRoute>
-        } />
+        {/* Note: Admin and Login features removed as per client request */}
       </Routes>
     </Router>
   );
