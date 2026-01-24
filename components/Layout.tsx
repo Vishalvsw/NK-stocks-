@@ -29,7 +29,7 @@ const Navbar = ({ offset = 0 }: { offset?: number }) => {
               <TrendingUp className="h-6 w-6 text-secondary" />
             </div>
             <span className={`text-2xl font-black tracking-tighter ${scrolled || location.pathname !== '/' ? 'text-primary' : 'text-white'}`}>
-              FINSTOCK<span className="text-secondary">.</span>
+              NKSTOCK<span className="text-secondary">.</span>
             </span>
           </Link>
 
@@ -102,7 +102,7 @@ const Footer = () => {
                <div className="bg-secondary p-2.5 rounded-xl">
                 <TrendingUp className="h-6 w-6 text-primary" />
               </div>
-              <span className="text-3xl font-black tracking-tighter">FINSTOCK SOLUTIONS<span className="text-secondary">.</span></span>
+              <span className="text-3xl font-black tracking-tighter">NK STOCK SOLUTIONS<span className="text-secondary">.</span></span>
             </div>
             <p className="text-slate-400 text-lg max-w-sm mb-10 leading-relaxed">
               Premium stock market advisory and educational frameworks for the dedicated investor. We prioritize capital protection and systematic learning.
@@ -138,13 +138,13 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-4">
                 <Mail className="h-5 w-5 text-secondary" />
-                <span className="text-slate-400 font-medium">support@finstocksolutions.com</span>
+                <span className="text-slate-400 font-medium">support@nkstocksolutions.com</span>
               </li>
             </ul>
           </div>
         </div>
         <div className="pt-12 border-t border-white/5 text-center">
-          <p className="text-slate-500 font-bold text-[10px] uppercase tracking-[0.4em]">© 2024 FINSTOCK SOLUTIONS. WE ARE NOT SEBI REGISTERED.</p>
+          <p className="text-slate-500 font-bold text-[10px] uppercase tracking-[0.4em]">© 2024 NK STOCK SOLUTIONS. WE ARE NOT SEBI REGISTERED.</p>
         </div>
       </div>
     </footer>
@@ -178,7 +178,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           <div className="bg-red-600 text-white text-[9px] font-black uppercase px-2 py-1 absolute left-0 z-20 animate-pulse shadow-md">LATEST</div>
           {/* @ts-ignore */}
           <marquee direction="left" scrollamount="7" className="font-bold text-[11px] uppercase tracking-[0.15em] opacity-90 pl-16">
-            <span className="text-secondary">● REGULATORY DISCLOSURE:</span> WE ARE NOT SEBI REGISTERED. INVESTING IS SUBJECT TO MARKET RISK. <span className="text-secondary ml-8">● OFFICIAL DOMAIN:</span> WWW.FINSTOCKSOLUTIONS.COM <span className="text-secondary ml-8">● SUPPORT HOTLINE:</span> 9900691748, 8904528316 <span className="text-secondary ml-8">● SECURITY ALERT:</span> NEVER SHARE BROKING OR BANKING CREDENTIALS.
+            <span className="text-secondary">● REGULATORY DISCLOSURE:</span> WE ARE NOT SEBI REGISTERED. INVESTING IS SUBJECT TO MARKET RISK. <span className="text-secondary ml-8">● OFFICIAL DOMAIN:</span> WWW.NKSTOCKSOLUTIONS.COM <span className="text-secondary ml-8">● SUPPORT HOTLINE:</span> 9900691748, 8904528316 <span className="text-secondary ml-8">● SECURITY ALERT:</span> NEVER SHARE BROKING OR BANKING CREDENTIALS.
           {/* @ts-ignore */}
           </marquee>
         </div>

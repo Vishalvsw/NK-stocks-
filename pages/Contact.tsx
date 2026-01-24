@@ -42,7 +42,7 @@ const Contact = () => {
                        <div className="bg-white/5 p-4 rounded-2xl border border-white/10"><Mail className="h-6 w-6 text-secondary" /></div>
                        <div>
                          <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-2">E-Mail Identity</p>
-                         <p className="text-xl font-bold">support@finstocksolutions.com</p>
+                         <p className="text-xl font-bold">support@nkstocksolutions.com</p>
                        </div>
                      </div>
 

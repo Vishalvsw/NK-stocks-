@@ -10,7 +10,7 @@ const Home = () => {
   const topCourses = courses.slice(0, 3);
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/919900691748?text=Hello%20Finstock%20Solutions,%20I%20am%20interested%20in%20joining%20your%20trading%20academy.", "_blank");
+    window.open("https://wa.me/919900691748?text=Hello%20NK%20Stock%20Solutions,%20I%20am%20interested%20in%20joining%20your%20trading%20academy.", "_blank");
   };
 
   return (
@@ -22,10 +22,10 @@ const Home = () => {
             <div className="space-y-8">
               <div className="inline-flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm">
                 <span className="flex h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">Official Channel: Finstock Solutions</span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">Official Channel: NK Stock Solutions</span>
               </div>
               <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
-                Master Trading with <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Finstock.</span>
+                Master Trading with <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">NK Stock.</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed">
                 Expert-led stock market education designed for the modern Indian trader. Data-driven strategies, live analysis, and lifelong support.
@@ -60,7 +60,7 @@ const Home = () => {
         <div className="bg-primary shadow-2xl rounded-2xl overflow-hidden border border-white/5 py-3">
           {/* @ts-ignore */}
           <marquee direction="left" scrollamount="6" className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
-            <span className="text-amber-500">SECURITY PROTOCOL:</span> WE DO NOT ASK FOR BROKING CREDENTIALS ● NO ASSURED PROFITS ● NO GUARANTEED RETURNS ● PAYMENTS ONLY IN REGISTERED BANK ACCOUNTS ● CHECK OUR PAYMENT PAGE FOR DETAILS ● FINSTOCK SOLUTIONS IS NOT SEBI REGISTERED.
+            <span className="text-amber-500">SECURITY PROTOCOL:</span> WE DO NOT ASK FOR BROKING CREDENTIALS ● NO ASSURED PROFITS ● NO GUARANTEED RETURNS ● PAYMENTS ONLY IN REGISTERED BANK ACCOUNTS ● CHECK OUR PAYMENT PAGE FOR DETAILS ● NK STOCK SOLUTIONS IS NOT SEBI REGISTERED.
           {/* @ts-ignore */}
           </marquee>
         </div>

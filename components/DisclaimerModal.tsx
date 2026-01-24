@@ -56,10 +56,10 @@ export const DisclaimerModal: React.FC = () => {
               <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400">Official Channels</h4>
               <ul className="space-y-3">
                 <li className="flex items-center text-sm font-bold text-primary">
-                  <ExternalLink className="h-4 w-4 mr-2 text-secondary" /> www.finstocksolutions.com
+                  <ExternalLink className="h-4 w-4 mr-2 text-secondary" /> www.nkstocksolutions.com
                 </li>
                 <li className="flex items-center text-sm font-bold text-primary">
-                  <ShieldCheck className="h-4 w-4 mr-2 text-secondary" /> support@finstocksolutions.com
+                  <ShieldCheck className="h-4 w-4 mr-2 text-secondary" /> support@nkstocksolutions.com
                 </li>
                 <li className="flex items-start text-sm font-bold text-primary">
                   <ExternalLink className="h-4 w-4 mr-2 text-secondary mt-1 flex-shrink-0" />
@@ -89,11 +89,11 @@ export const DisclaimerModal: React.FC = () => {
               <ShieldCheck className="h-5 w-5 mr-2 text-secondary" /> Security & Credential Protection
             </h4>
             <p className="text-xs text-slate-500 leading-relaxed">
-              Clients are never asked for their <span className="text-primary font-bold">Banking or Broking Credentials</span> at Finstock Solutions. 
+              Clients are never asked for their <span className="text-primary font-bold">Banking or Broking Credentials</span> at NK Stock Solutions. 
               Do not share your Credit Card / Debit Card / Netbanking / Demat Account credentials with any of our employees.
             </p>
             <p className="text-xs text-secondary font-bold bg-secondary/5 p-4 rounded-2xl border border-secondary/10">
-              Report suspicious requests immediately: 9900691748 or support@finstocksolutions.com
+              Report suspicious requests immediately: 9900691748 or support@nkstocksolutions.com
             </p>
           </div>
 

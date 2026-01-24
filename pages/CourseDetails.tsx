@@ -24,7 +24,7 @@ const CourseDetails = () => {
 
   const handleEnrollWhatsApp = () => {
     const phoneNumber = "919900691748";
-    const message = `Hello Finstock Solutions, I am interested in enrolling for the "${course.title}" course (Price: ₹${course.price}). Please guide me with the enrollment process.`;
+    const message = `Hello NK Stock Solutions, I am interested in enrolling for the "${course.title}" course (Price: ₹${course.price}). Please guide me with the enrollment process.`;
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
   };
