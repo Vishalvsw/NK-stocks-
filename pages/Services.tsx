@@ -72,37 +72,38 @@ const Services = () => {
   ];
 
   const ServiceCard: React.FC<{ title: string, description: string, icon: any }> = ({ title, description, icon: Icon }) => (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-secondary/30 group h-full flex flex-col">
-      <div className="mb-4 bg-gray-50 w-12 h-12 rounded-lg flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-        <Icon className="h-6 w-6" />
+    <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all hover:border-secondary/30 group h-full flex flex-col">
+      <div className="mb-6 bg-slate-50 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-primary transition-all duration-300">
+        <Icon className="h-6 w-6 md:h-7 md:w-7" />
       </div>
-      <h3 className="text-lg font-bold text-slate-900 mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm leading-relaxed flex-grow">{description}</p>
-      <div className="mt-4 flex items-center text-secondary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-        Learn More <ArrowRight className="ml-1 h-4 w-4" />
+      <h3 className="text-lg md:text-xl font-bold text-primary mb-3">{title}</h3>
+      <p className="text-slate-500 text-sm md:text-base leading-relaxed flex-grow">{description}</p>
+      <div className="mt-6 flex items-center text-secondary text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-300">
+        Learn More <ArrowRight className="ml-1.5 h-4 w-4" />
       </div>
     </div>
   );
 
   return (
     <Layout>
-      <div className="bg-slate-50 py-16">
+      <div className="bg-slate-50 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-slate-900 mb-4">Our Services</h1>
-            <p className="text-gray-600 text-lg">
+          <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
+             <h2 className="text-xs md:text-sm font-black text-secondary uppercase tracking-[0.3em] mb-4">Domain Expertise</h2>
+            <h1 className="text-3xl md:text-5xl font-black text-primary mb-6">Our Services</h1>
+            <p className="text-slate-500 text-base md:text-lg leading-relaxed">
               We offer a wide range of trading and investment services tailored to meet your financial goals. 
               From Equity to Commodities, we have you covered.
             </p>
           </div>
 
           {/* Equity Services */}
-          <div className="mb-16">
-            <div className="flex items-center space-x-3 mb-8 border-b border-gray-200 pb-4">
-              <TrendingUp className="h-8 w-8 text-secondary" />
-              <h2 className="text-2xl font-bold text-slate-900">Equity Services</h2>
+          <div className="mb-20 md:mb-24">
+            <div className="flex items-center space-x-3 mb-10 border-b border-slate-200 pb-5">
+              <TrendingUp className="h-7 w-7 md:h-8 md:w-8 text-secondary" />
+              <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight">Equity Services</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {equityServices.map((service, index) => (
                 <ServiceCard key={index} {...service} icon={TrendingUp} />
               ))}
@@ -110,12 +111,12 @@ const Services = () => {
           </div>
 
           {/* Derivative Services */}
-          <div className="mb-16">
-            <div className="flex items-center space-x-3 mb-8 border-b border-gray-200 pb-4">
-              <Activity className="h-8 w-8 text-secondary" />
-              <h2 className="text-2xl font-bold text-slate-900">Derivative Services</h2>
+          <div className="mb-20 md:mb-24">
+            <div className="flex items-center space-x-3 mb-10 border-b border-slate-200 pb-5">
+              <Activity className="h-7 w-7 md:h-8 md:w-8 text-secondary" />
+              <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight">Derivative Services</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {derivativeServices.map((service, index) => (
                 <ServiceCard key={index} {...service} icon={Activity} />
               ))}
@@ -123,12 +124,12 @@ const Services = () => {
           </div>
 
           {/* Index Services */}
-          <div className="mb-16">
-            <div className="flex items-center space-x-3 mb-8 border-b border-gray-200 pb-4">
-              <BarChart2 className="h-8 w-8 text-secondary" />
-              <h2 className="text-2xl font-bold text-slate-900">Index Services</h2>
+          <div className="mb-20 md:mb-24">
+            <div className="flex items-center space-x-3 mb-10 border-b border-slate-200 pb-5">
+              <BarChart2 className="h-7 w-7 md:h-8 md:w-8 text-secondary" />
+              <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight">Index Services</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {indexServices.map((service, index) => (
                 <ServiceCard key={index} {...service} icon={BarChart2} />
               ))}
@@ -137,11 +138,11 @@ const Services = () => {
 
            {/* MCX Services */}
            <div className="mb-8">
-            <div className="flex items-center space-x-3 mb-8 border-b border-gray-200 pb-4">
-              <Zap className="h-8 w-8 text-secondary" />
-              <h2 className="text-2xl font-bold text-slate-900">MCX Services</h2>
+            <div className="flex items-center space-x-3 mb-10 border-b border-slate-200 pb-5">
+              <Zap className="h-7 w-7 md:h-8 md:w-8 text-secondary" />
+              <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight">MCX Services</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {mcxServices.map((service, index) => (
                 <ServiceCard key={index} {...service} icon={Zap} />
               ))}
